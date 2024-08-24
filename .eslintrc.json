@@ -23,9 +23,8 @@
   },
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
-    "semi": ["warn", "never"],
-    "quotes": ["warn", "single"],
-    "jsx-quotes": ["warn", "prefer-single"],
+    "quotes": ["warn", "double"],
+    "jsx-quotes": ["warn", "prefer-double"],
     "indent": ["warn", 2, { "SwitchCase": 1 }],
     "comma-spacing": ["error", { "before": false, "after": true }],
     "no-unused-vars": "warn",
@@ -36,6 +35,12 @@
     "@typescript-eslint/no-explicit-any": "warn",
     "react/react-in-jsx-scope": "off",
     "no-extra-semi": "warn",
-    "no-empty-function": "warn"
+    "no-empty-function": "warn",
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }
