@@ -7,9 +7,7 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:@next/next/recommended",
-    "plugin:prettier/recommended",
-    "prettier"
+    "plugin:@next/next/recommended"
   ],
   "settings": {
     "react": {
@@ -35,12 +33,6 @@
     "@typescript-eslint/no-explicit-any": "warn",
     "react/react-in-jsx-scope": "off",
     "no-extra-semi": "warn",
-    "no-empty-function": "warn",
-    "prettier/prettier": [
-      "warn",
-      {
-        "endOfLine": "auto"
-      }
-    ]
+    "no-empty-function": "warn"
   }
 }
