@@ -1,16 +1,17 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./src/app/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
+  ],
   theme: {
     screens: {
       sm: "375px",
       md: "834px",
-      lg: "1440px",
-      toSmOnly: { min: "374.98px", max: "833.98px" },
-      smOnly: { max: "833.98px" },
-      mdOnly: { min: "834px", max: "1439.98px" },
-      notXl: { max: "1439.98px" }
+      lg: "1440px"
     },
     container: {
       padding: {
@@ -20,18 +21,14 @@ const config: Config = {
       }
     },
     extend: {
+      container: {
+        center: true
+      },
       colors: {
-        blue: "#90BDDE",
-        pink: "#FFB8CA",
-        "primary-white": "#FFFEFE",
-        "accent-pink": "#F57193",
-        "accent-blue": "#4D88B2",
-        yellow: "E8B888",
-        rose: "#B26B7B",
-        gray: "#AFADAD",
-        black: "363636",
-        "burger-bg": "#E7F5FF",
-        gold: "#E8B888"
+        "text-main": "#262522",
+        "text-secondary": "#A0A0A0",
+        "primary-3": "#EE6352",
+        stroke: "rgba(38, 37, 34, 0.24)"
       }
     }
   },

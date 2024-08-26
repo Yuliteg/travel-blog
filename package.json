@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "npm run open-browser && next dev",
-    "open-browser": "start http://localhost:3000",
+    "open-browser": "start  http://localhost:3000/recipe/site",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
