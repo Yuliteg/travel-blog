@@ -66,8 +66,6 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Export the static site
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Move site folder contents to root
         run: mv out/site/* out/
       - name: Upload artifact
