@@ -16,11 +16,8 @@ const removeTrailingSlash = (url: string) => url.replace(/\/$/, "");
 
 const NavLink: FC<NavLinkProps> = ({ href, label }) => {
   const pathname = usePathname();
-  const normalizedPathname = removeTrailingSlash(pathname);
-  const normalizedHref = removeTrailingSlash(getPath(href));
-
-  console.log("normalizedPathname", normalizedPathname);
-  console.log("normalizedHref", normalizedHref);
+  const normalizedPathname = removeTrailingSlash(pathname) || "/";
+  const normalizedHref = removeTrailingSlash(getPath(href)) || "/";
 
   const isActive = normalizedPathname === normalizedHref;
 
