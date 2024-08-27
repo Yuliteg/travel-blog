@@ -12,9 +12,14 @@ interface NavLinkProps {
   label: string;
 }
 
+const removeTrailingSlash = (url: string) => url.replace(/\/$/, "");
+
 const NavLink: FC<NavLinkProps> = ({ href, label }) => {
   const pathname = usePathname();
-  const isActive = pathname === getPath(href);
+  const normalizedPathname = removeTrailingSlash(pathname);
+  const normalizedHref = removeTrailingSlash(getPath(href));
+
+  const isActive = normalizedPathname === normalizedHref;
 
   return (
     <li className="relative">
