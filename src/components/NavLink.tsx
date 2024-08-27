@@ -19,12 +19,15 @@ const NavLink: FC<NavLinkProps> = ({ href, label }) => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    const normalizedPathname = removeTrailingSlash(pathname) || "/";
-    const normalizedHref = removeTrailingSlash(getPath(href)) || "/";
+    const normalizedPathname = removeTrailingSlash(pathname);
+    const normalizedHref = removeTrailingSlash(getPath(href));
 
-    setIsActive(normalizedPathname.startsWith(normalizedHref));
+    if (normalizedHref === "/") {
+      setIsActive(normalizedPathname === "/");
+    } else {
+      setIsActive(normalizedPathname === normalizedHref);
+    }
   }, [pathname, href]);
-
   return (
     <li className="relative">
       <Link
