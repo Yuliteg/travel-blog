@@ -19,6 +19,10 @@ const NavLink: FC<NavLinkProps> = ({ href, label }) => {
   const normalizedPathname = removeTrailingSlash(pathname);
   const normalizedHref = removeTrailingSlash(getPath(href));
 
+  console.log(normalizedPathname, normalizedHref);
+  console.log(normalizedPathname === normalizedHref);
+  console.log(normalizedHref);
+
   const isActive = normalizedPathname === normalizedHref;
 
   return (
