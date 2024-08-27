@@ -24,6 +24,9 @@ const config: Config = {
       container: {
         center: true
       },
+      letterSpacing: {
+        tighter: "0.03em"
+      },
       colors: {
         "text-main": "#262522",
         "text-secondary": "#A0A0A0",

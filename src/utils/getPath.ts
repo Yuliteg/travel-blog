@@ -1,5 +1,6 @@
-export const getPath = (path: string) => {
-  const isDev = process.env.NODE_ENV === "development";
+import { BASE_PATH } from "@/lib/constant";
 
-  return isDev ? `/site${path}` : `${path}`;
+export const getPath = (path: string, base: string = BASE_PATH) => {
+  const isDev = process.env.NODE_ENV === "development";
+  return isDev ? `${base}${path}` : path;
 };
