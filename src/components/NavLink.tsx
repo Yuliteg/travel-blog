@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -12,18 +12,11 @@ interface NavLinkProps {
   label: string;
 }
 
-const removeTrailingSlash = (url: string) => url.replace(/\/$/, "");
-
 const NavLink: FC<NavLinkProps> = ({ href, label }) => {
   const pathname = usePathname();
-  const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    const normalizedPathname = removeTrailingSlash(pathname);
-    const normalizedHref = removeTrailingSlash(getPath(href));
+  const isActive = pathname === getPath(href);
 
-    setIsActive(normalizedPathname === normalizedHref);
-  }, [pathname, href]);
   return (
     <li className="relative">
       <Link
