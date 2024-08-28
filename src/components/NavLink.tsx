@@ -5,6 +5,7 @@ import React, { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { BASE_PATH } from "@/lib/constant";
 import { getPath } from "@/utils/getPath";
 
 interface NavLinkProps {
@@ -22,7 +23,10 @@ const NavLink: FC<NavLinkProps> = ({ href, label }) => {
     const normalizedPathname = removeTrailingSlash(pathname);
     const normalizedHref = removeTrailingSlash(getPath(href));
 
-    setIsActive(normalizedPathname === normalizedHref);
+    setIsActive(
+      normalizedPathname === normalizedHref ||
+        normalizedPathname === `${BASE_PATH}${normalizedHref}`
+    );
   }, [pathname, href]);
   return (
     <li className="relative">
