@@ -24,12 +24,17 @@ const config: Config = {
       container: {
         center: true
       },
+      height: {
+        header: "var(--header-height)",
+        hero: "calc(100vh - var(--header-height) - 1rem)"
+      },
       letterSpacing: {
         tighter: "0.03em"
       },
       colors: {
         "text-main": "#262522",
         "text-secondary": "#A0A0A0",
+        "primary-2": "#F29C33",
         "primary-3": "#EE6352",
         stroke: "rgba(38, 37, 34, 0.24)"
       }

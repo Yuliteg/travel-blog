@@ -32,15 +32,15 @@ const NavLink: FC<NavLinkProps> = ({ href, label }) => {
     <li className="relative">
       <Link
         href={getPath(href)}
-        className={`hover:text-primary-3 transition-standard  ${isActive ? "text-black" : "text-gray-500"}`}
+        className={`transition-colors duration-200 ease-in-out hover:text-primary-3 ${isActive ? "text-black" : "text-gray-500"}`}
       >
         {label}
       </Link>
 
       <span
-        className={`absolute left-0 bottom-[-2px] w-full h-[2px] bg-red-500 transition-transform duration-200 ease-in-out ${
+        className={`absolute bottom-[-2px] left-0 h-[2px] w-full bg-red-500 transition-transform duration-200 ease-in-out ${
           isActive ? "scale-x-100" : "scale-x-0"
-        } hover:scale-x-100 origin-left`}
+        } origin-left hover:scale-x-100`}
       ></span>
     </li>
   );

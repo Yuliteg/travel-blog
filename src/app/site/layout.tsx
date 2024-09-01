@@ -27,11 +27,11 @@ export default function SiteLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${poppins.className} tracking-tighter flex flex-col h-full min-h-screen`}
+        className={`${poppins.className} flex h-full min-h-screen flex-col tracking-tighter`}
       >
-        <div className="bg-[#F0EBE1] flex flex-col min-h-screen">
+        <div className="flex min-h-screen flex-col bg-[#F0EBE1]">
           <Header />
-          <main className="flex-1 container mx-10 py-8">{children}</main>
+          <main className="mx-auto w-11/12 flex-1">{children}</main>
           <Footer />
         </div>
       </body>
