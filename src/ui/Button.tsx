@@ -1,6 +1,7 @@
 import React from "react";
 
 import clsx from "clsx";
+import Link from "next/link";
 
 interface ButtonProps {
   variant?: "filled" | "outlined";
@@ -9,6 +10,7 @@ interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
+  href?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -17,7 +19,8 @@ export const Button: React.FC<ButtonProps> = ({
   size = "md",
   children,
   onClick,
-  className
+  className,
+  href
 }) => {
   const baseStyles =
     "text-md rounded-full font-semibold transition-colors duration-200 ease-in-out uppercase font-montserrat";
@@ -33,11 +36,23 @@ export const Button: React.FC<ButtonProps> = ({
     lg: "px-8 py-4 text-lg"
   };
 
+  const buttonClasses = clsx(
+    baseStyles,
+    variants[variant],
+    sizes[size],
+    className
+  );
+
+  if (href) {
+    return (
+      <Link href={href} passHref className={buttonClasses} onClick={onClick}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <button
-      onClick={onClick}
-      className={clsx(baseStyles, variants[variant], sizes[size], className)}
-    >
+    <button onClick={onClick} className={buttonClasses}>
       {children}
     </button>
   );

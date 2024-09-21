@@ -5,7 +5,7 @@ import React, { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { BASE_PATH } from "@/lib/constant";
+import { BASE_PATH } from "@/lib/constants";
 import { getPath } from "@/utils/getPath";
 
 interface NavLinkProps {
@@ -32,7 +32,7 @@ const NavLink: FC<NavLinkProps> = ({ href, label }) => {
     <li className="relative">
       <Link
         href={getPath(href)}
-        className={`transition-colors duration-200 ease-in-out hover:text-primary-3 ${isActive ? "text-black" : "text-gray-500"}`}
+        className={`transition-colors duration-200 ease-in-out hover:text-primary-3 ${isActive ? "text-black" : "text-gray-600"}`}
       >
         {label}
       </Link>

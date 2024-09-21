@@ -2,7 +2,7 @@ import React from "react";
 
 import Link from "next/link";
 
-import { navItems } from "@/lib/constant";
+import { navItems } from "@/lib/constants";
 import { Icon } from "@/ui/Icon";
 import { getPath } from "@/utils/getPath";
 

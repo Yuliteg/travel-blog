@@ -1,4 +1,4 @@
-import { BASE_PATH } from "@/lib/constant";
+import { BASE_PATH } from "@/lib/constants";
 
 export const getPath = (path: string) => {
   const isDev = process.env.NODE_ENV === "development";

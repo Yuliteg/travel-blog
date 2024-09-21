@@ -33,6 +33,7 @@
     "@typescript-eslint/no-explicit-any": "warn",
     "react/react-in-jsx-scope": "off",
     "no-extra-semi": "warn",
-    "no-empty-function": "warn"
+    "no-empty-function": "warn",
+    "react/prop-types": 0
   }
 }
