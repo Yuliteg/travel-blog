@@ -1,3 +1,4 @@
+import lineClamp from "@tailwindcss/line-clamp";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -36,11 +37,15 @@ const config: Config = {
         "text-secondary": "#A0A0A0",
         "primary-2": "#F29C33",
         "primary-3": "#EE6352",
+        customBorder: "#e0dbc9",
+        customBg: "#f0ebe1",
+        skeletonGray: "#e8e4db",
+
         stroke: "rgba(38, 37, 34, 0.24)"
       }
     }
   },
-  plugins: []
+  plugins: [lineClamp]
 };
 
 export default config;

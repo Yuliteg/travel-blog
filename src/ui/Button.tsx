@@ -5,7 +5,8 @@ import Link from "next/link";
 
 interface ButtonProps {
   variant?: "filled" | "outlined";
-  color?: string;
+  bgColor?: string;
+  textColor?: string;
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
   onClick?: () => void;
@@ -15,7 +16,8 @@ interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({
   variant = "filled",
-  color = "bg-orange-400",
+  bgColor = "bg-orange-400",
+  textColor = "text-black",
   size = "md",
   children,
   onClick,
@@ -25,9 +27,14 @@ export const Button: React.FC<ButtonProps> = ({
   const baseStyles =
     "text-md rounded-full font-semibold transition-colors duration-200 ease-in-out uppercase font-montserrat";
 
+  const isOutlinedTransparent =
+    variant === "outlined" && bgColor === "transparent";
+
   const variants = {
-    filled: `${color} text-black hover:bg-opacity-80`,
-    outlined: `border-2 ${color} text-black hover:bg-opacity-80 hover:text-white`
+    filled: `${bgColor} ${textColor} hover:bg-opacity-80`,
+    outlined: isOutlinedTransparent
+      ? `border-2 border-gray-900 ${textColor} bg-transparent hover:border-orange-400 hover:text-orange-500`
+      : `border-2 ${bgColor} ${textColor} hover:bg-opacity-80 border-gray-900`
   };
 
   const sizes = {
@@ -52,7 +59,7 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button onClick={onClick} className={buttonClasses}>
+    <button onClick={onClick} className={buttonClasses} type="button">
       {children}
     </button>
   );

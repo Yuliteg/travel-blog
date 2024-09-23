@@ -5,7 +5,7 @@ import { Header } from "@/components/Header";
 
 import "../globals.css";
 
-const poppins = Poppins({ subsets: ["latin"], weight: "700" });
+const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
 export async function generateMetadata() {
   return {

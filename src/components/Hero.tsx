@@ -12,7 +12,7 @@ export const Hero = () => {
         fill
         style={{ objectFit: "cover", objectPosition: "top" }}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
-        quality={70}
+        quality={80}
         priority
       />
       <div className="absolute inset-0 z-10 bg-[#262522] opacity-60"></div>
@@ -27,7 +27,7 @@ export const Hero = () => {
         </p>
         <Button
           variant="filled"
-          color="bg-orange-400"
+          bgColor="bg-orange-400"
           size="sm"
           href={getPath("/recipes/")}
         >

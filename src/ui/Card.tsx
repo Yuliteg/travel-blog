@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { Button } from "./Button";
+
 interface CardProps {
   title: string;
   description: string;
@@ -18,24 +20,32 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="flex flex-col justify-between rounded-lg bg-white shadow-md">
-      <div className="relative h-60 w-full overflow-hidden rounded-t-lg object-cover">
+      <div className="relative h-60 w-full overflow-hidden rounded-t-lg">
         <Image
-          src={"/recipe/hero.webp"}
+          src={image}
           alt={title}
+          loading="lazy"
           fill
           className="object-cover object-top"
         />
       </div>
-      <div className="p-4">
-        <h3 className="text-lg font-bold">{title}</h3>
-        <p>{description}</p>
-        <div className="card-footer mt-2 flex items-center justify-between">
-          <span>
+      <div className="overflow-hidden p-4">
+        <h3
+          title={title}
+          className="font-montserrat mb-2 truncate text-xl font-bold"
+        >
+          {title}
+        </h3>
+        <p className="line-clamp-3 min-h-14 text-sm leading-tight text-gray-700">
+          {description}
+        </p>
+        <div className="mt-2 flex items-center justify-between">
+          <p className="text-sm">
             {prepTime} - {serves}
-          </span>
-          <button className="mt-4 rounded-full bg-orange-400 px-4 py-2 text-white hover:bg-orange-500">
+          </p>
+          <Button variant="outlined" size="sm" bgColor="transparent">
             View Recipe
-          </button>
+          </Button>
         </div>
       </div>
     </div>

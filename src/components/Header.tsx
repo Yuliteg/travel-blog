@@ -10,12 +10,12 @@ import NavLink from "./NavLink";
 
 export const Header = () => {
   return (
-    <header className="z-50 flex h-header items-center">
+    <header className="z-50 flex h-header items-center font-bold">
       <div className="mx-auto flex w-11/12 items-center justify-between rounded-xl border border-stroke px-8 py-4">
         <Link href={getPath("/")} passHref aria-label="Go to homepage">
           <div className="group flex cursor-pointer items-center">
             <Icon src="/recipe/logo.svg" alt="Flavor Palette Logo" priority />
-            <span className="ml-2 text-xl font-medium leading-none text-text-main transition-colors duration-200 ease-in-out group-hover:text-primary-3">
+            <span className="ml-2 text-xl font-bold leading-none text-text-main transition-colors duration-200 ease-in-out group-hover:text-primary-3">
               Flavor Palette
             </span>
           </div>

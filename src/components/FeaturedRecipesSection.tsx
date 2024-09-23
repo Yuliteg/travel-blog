@@ -2,6 +2,8 @@
 
 import { useRef, useState } from "react";
 
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SwiperSlide } from "swiper/react";
 
 import { featuredRecipes } from "@/lib/constants";
@@ -24,28 +26,32 @@ export const FeaturedRecipesSection: React.FC = () => {
   };
 
   return (
-    <div className="my-20 flex w-full flex-col gap-5 rounded-xl border border-stroke bg-[#F0EBE1] px-4 py-4">
-      <div className="flex justify-between py-3">
+    <div className="my-20 w-full flex-col gap-5 rounded-xl border border-stroke px-4 py-4">
+      <div className="flex justify-between py-4">
         <SectionTitle title="Featured Recipes" fontSize="3xl" />
 
         <div className="flex gap-3">
           <button
             ref={prevRef}
-            className={`rounded-full bg-white p-2 shadow-md ${
-              sliderState.isBeginning ? "cursor-not-allowed opacity-50" : ""
+            className={`flex h-10 w-10 items-center justify-center rounded-full border shadow-md transition-all duration-200 ${
+              sliderState.isBeginning
+                ? "border-customBorder bg-customBg text-gray-500"
+                : "border-[#d1c7a8] bg-[#efda99] text-gray-800"
             }`}
             disabled={sliderState.isBeginning}
           >
-            Prev
+            <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4" />
           </button>
           <button
             ref={nextRef}
-            className={`rounded-full bg-white p-2 shadow-md ${
-              sliderState.isEnd ? "cursor-not-allowed opacity-50" : ""
+            className={`flex h-10 w-10 items-center justify-center rounded-full border shadow-md transition-all duration-200 ${
+              sliderState.isEnd
+                ? "border-customBorder bg-customBg text-gray-500"
+                : "border-[#d1c7a8] bg-[#efda99] text-gray-800"
             }`}
             disabled={sliderState.isEnd}
           >
-            Next
+            <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
           </button>
         </div>
       </div>

@@ -22,8 +22,11 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.53.0",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "axios": "^1.7.3",
     "clsx": "^2.1.1",
