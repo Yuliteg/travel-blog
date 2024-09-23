@@ -26,8 +26,8 @@ export const FeaturedRecipesSection: React.FC = () => {
   };
 
   return (
-    <div className="my-20 w-full flex-col gap-5 rounded-xl border border-stroke px-4 py-4">
-      <div className="flex justify-between py-4">
+    <div className="my-20 w-full flex-col gap-5 rounded-xl border border-stroke px-4 pb-4">
+      <div className="flex justify-between py-6">
         <SectionTitle title="Featured Recipes" fontSize="3xl" />
 
         <div className="flex gap-3">
