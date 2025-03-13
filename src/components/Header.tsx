@@ -4,7 +4,6 @@ import Link from "next/link";
 
 import { navItems } from "@/lib/constants";
 import { Icon } from "@/ui/Icon";
-import { getPath } from "@/utils/getPath";
 
 import NavLink from "./NavLink";
 
@@ -12,9 +11,9 @@ export const Header = () => {
   return (
     <header className="z-50 flex h-header items-center font-bold">
       <div className="mx-auto flex w-11/12 items-center justify-between rounded-xl border border-stroke px-8 py-4">
-        <Link href={getPath("/")} passHref aria-label="Go to homepage">
+        <Link href={"/"} passHref aria-label="Go to homepage">
           <div className="group flex cursor-pointer items-center">
-            <Icon src="/recipe/logo.svg" alt="Flavor Palette Logo" priority />
+            <Icon src="/logo.svg" alt="Flavor Palette Logo" priority />
             <span className="ml-2 text-xl font-bold leading-none text-text-main transition-colors duration-200 ease-in-out group-hover:text-primary-3">
               Flavor Palette
             </span>

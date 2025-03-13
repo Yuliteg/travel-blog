@@ -1,13 +1,12 @@
 import Image from "next/image";
 
 import { Button } from "@/ui/Button";
-import { getPath } from "@/utils/getPath";
 
 export const Hero = () => {
   return (
     <div className="relative h-hero w-full overflow-hidden rounded-xl">
       <Image
-        src="/recipe/hero.webp"
+        src="/hero.webp"
         alt="Culinary Image"
         fill
         style={{ objectFit: "cover", objectPosition: "top" }}
@@ -29,7 +28,7 @@ export const Hero = () => {
           variant="filled"
           bgColor="bg-orange-400"
           size="sm"
-          href={getPath("/recipes/")}
+          href={"/recipes/"}
         >
           Explore All Recipes
         </Button>

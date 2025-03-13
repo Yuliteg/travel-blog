@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { BASE_PATH } from "@/lib/constants";
-import { getPath } from "@/utils/getPath";
 
 interface NavLinkProps {
   href: string;
@@ -17,21 +16,16 @@ const removeTrailingSlash = (url: string) => url.replace(/\/$/, "");
 
 const NavLink: FC<NavLinkProps> = ({ href, label }) => {
   const pathname = usePathname();
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(pathname === href);
 
   useEffect(() => {
-    const normalizedPathname = removeTrailingSlash(pathname);
-    const normalizedHref = removeTrailingSlash(getPath(href));
-
-    setIsActive(
-      normalizedPathname === normalizedHref ||
-        normalizedPathname === `${BASE_PATH}${normalizedHref}`
-    );
+    setIsActive(removeTrailingSlash(pathname) === removeTrailingSlash(href));
   }, [pathname, href]);
+
   return (
     <li className="relative">
       <Link
-        href={getPath(href)}
+        href={`${BASE_PATH}${href.startsWith("/") ? href.slice(1) : href}`}
         className={`transition-colors duration-200 ease-in-out hover:text-primary-3 ${isActive ? "text-black" : "text-gray-600"}`}
       >
         {label}

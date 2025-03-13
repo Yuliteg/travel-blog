@@ -1,4 +1,4 @@
-export const BASE_PATH = "/site";
+export const BASE_PATH = "/";
 
 export const navItems = [
   { path: "/", label: "Home" },
@@ -13,7 +13,7 @@ export const featuredRecipes = [
     id: 1,
     title: "Pasta",
     description: "Lorem ipsum dolor sit amet...",
-    image: "/recipe/hero.webp",
+    image: "/hero.webp",
     prepTime: "40 MIN",
     serves: "3 SERVES",
     badge: "New Recipe"
@@ -22,7 +22,7 @@ export const featuredRecipes = [
     id: 2,
     title: "Sweet Potatoes",
     description: "Lorem ipsum dolor sit amet,  ipsum dolor sit amet...",
-    image: "/recipe/hero.webp",
+    image: "/hero.webp",
     prepTime: "30 MIN",
     serves: "4 SERVES"
   },
@@ -31,7 +31,7 @@ export const featuredRecipes = [
     title: "Pasta",
     description:
       "Lorem ipsum dolor sit amet,  ipsum dolor sit amet,  ipsum dolor sit amet, Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet...",
-    image: "/recipe/hero.webp",
+    image: "/hero.webp",
     prepTime: "40 MIN",
     serves: "3 SERVES",
     badge: "New Recipe"
@@ -41,7 +41,7 @@ export const featuredRecipes = [
     title: "Sweet Potatoes",
     description:
       "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-    image: "/recipe/hero.webp",
+    image: "/hero.webp",
     prepTime: "30 MIN",
     serves: "4 SERVES"
   }

@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run open-browser && next dev",
-    "open-browser": "start  http://localhost:3000/recipe/site",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "prettier": "prettier --write .",
     "format": "npm run prettier && npm run lint:fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "dev-sanity": "sanity dev"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
