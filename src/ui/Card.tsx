@@ -18,11 +18,13 @@ export const Card: React.FC<CardProps> = ({
   prepTime,
   serves
 }) => {
+  const imageUrl = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}${image}`;
+
   return (
     <div className="flex flex-col justify-between rounded-lg bg-white shadow-md">
       <div className="relative h-60 w-full overflow-hidden rounded-t-lg">
         <Image
-          src={image}
+          src={imageUrl}
           alt={title}
           loading="lazy"
           fill

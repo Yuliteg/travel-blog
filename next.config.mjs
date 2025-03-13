@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
@@ -5,7 +6,10 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  trailingSlash: true
+  trailingSlash: true,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH
+  }
 };
 
 export default nextConfig;
