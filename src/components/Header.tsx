@@ -13,7 +13,11 @@ export const Header = () => {
       <div className="mx-auto flex w-11/12 items-center justify-between rounded-xl border border-stroke px-8 py-4">
         <Link href={"/"} passHref aria-label="Go to homepage">
           <div className="group flex cursor-pointer items-center">
-            <Icon src="/logo.svg" alt="Flavor Palette Logo" priority />
+            <Icon
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.svg`}
+              alt="Flavor Palette Logo"
+              priority
+            />
             <span className="ml-2 text-xl font-bold leading-none text-text-main transition-colors duration-200 ease-in-out group-hover:text-primary-3">
               Flavor Palette
             </span>

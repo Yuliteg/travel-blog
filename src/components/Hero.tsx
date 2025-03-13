@@ -6,7 +6,7 @@ export const Hero = () => {
   return (
     <div className="relative h-hero w-full overflow-hidden rounded-xl">
       <Image
-        src="/hero.webp"
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/hero.webp`}
         alt="Culinary Image"
         fill
         style={{ objectFit: "cover", objectPosition: "top" }}
