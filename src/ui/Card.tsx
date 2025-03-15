@@ -6,18 +6,9 @@ interface CardProps {
   title: string;
   description: string;
   image: string;
-  prepTime: string;
-  serves: string;
-  badge?: string;
 }
 
-export const Card: React.FC<CardProps> = ({
-  title,
-  description,
-  image,
-  prepTime,
-  serves
-}) => {
+export const Card: React.FC<CardProps> = ({ title, description, image }) => {
   const imageUrl = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}${image}`;
 
   return (
@@ -42,11 +33,8 @@ export const Card: React.FC<CardProps> = ({
           {description}
         </p>
         <div className="mt-2 flex items-center justify-between">
-          <p className="text-sm">
-            {prepTime} - {serves}
-          </p>
           <Button variant="outlined" size="sm" bgColor="transparent">
-            View Recipe
+            View Place
           </Button>
         </div>
       </div>

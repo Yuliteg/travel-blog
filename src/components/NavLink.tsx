@@ -5,8 +5,6 @@ import React, { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { BASE_PATH } from "@/lib/constants";
-
 interface NavLinkProps {
   href: string;
   label: string;
@@ -20,13 +18,14 @@ const NavLink: FC<NavLinkProps> = ({ href, label }) => {
 
   useEffect(() => {
     setIsActive(removeTrailingSlash(pathname) === removeTrailingSlash(href));
-  }, [pathname, href]);
+  }, [pathname]);
 
   return (
     <li className="relative">
       <Link
-        href={`${BASE_PATH}${href.startsWith("/") ? href.slice(1) : href}`}
-        className={`transition-colors duration-200 ease-in-out hover:text-primary-3 ${isActive ? "text-black" : "text-gray-600"}`}
+        //TODO: Add the href
+        href={"/"}
+        className={`transition-colors duration-200 ease-in-out hover:text-primary-3 ${isActive ? "text-white" : "text-white"}`}
       >
         {label}
       </Link>

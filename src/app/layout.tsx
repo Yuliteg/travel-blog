@@ -9,11 +9,12 @@ const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
 export async function generateMetadata() {
   return {
-    title: "Flavor Palette",
+    title: "Secret Europe",
     description:
-      "Explore a world of flavors, discover handcrafted recipes, and let the aroma of our passion for cooking fill your kitchen.",
+      "Discover the hidden gems of Europe. From the best places to eat, to the most beautiful hikes, to the most unique experiences, Secret Europe has you covered.",
     icons: {
-      icon: "/recipe/logo.svg"
+      // TODO Fix in prod
+      icon: "/logo.svg"
     }
   };
 }
@@ -29,9 +30,11 @@ export default function SiteLayout({
         suppressHydrationWarning={true}
         className={`${poppins.className} flex h-full min-h-screen flex-col tracking-tighter`}
       >
-        <div className="flex min-h-screen flex-col bg-[#F0EBE1]">
+        <div className="flex min-h-screen flex-col">
           <Header />
-          <main className="mx-auto w-11/12 flex-1">{children}</main>
+
+          <main className="w-full flex-1">{children}</main>
+
           <Footer />
         </div>
       </body>

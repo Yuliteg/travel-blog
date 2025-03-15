@@ -1,7 +1,7 @@
 import { type SchemaTypeDefinition } from "sanity";
 
-import recipeSchema from "./recipe";
+import placeSchema from "./places";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [recipeSchema]
+  types: [placeSchema]
 };

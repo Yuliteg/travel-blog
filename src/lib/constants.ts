@@ -1,48 +1,36 @@
 export const BASE_PATH = "/";
 
 export const navItems = [
-  { path: "/", label: "Home" },
-  { path: "/recipes/", label: "Recipes" },
-  { path: "/cooking-tips/", label: "Cooking Tips" },
+  { path: "/all-places/", label: "All Places" },
   { path: "/about/", label: "About Us" }
 ];
 
 // Mock data
-export const featuredRecipes = [
+export const featuredPlaces = [
   {
     id: 1,
-    title: "Pasta",
+    title: "Lorem",
     description: "Lorem ipsum dolor sit amet...",
-    image: "/hero.webp",
-    prepTime: "40 MIN",
-    serves: "3 SERVES",
-    badge: "New Recipe"
+    image: "/hero.webp"
   },
   {
     id: 2,
-    title: "Sweet Potatoes",
+    title: "Lorem",
     description: "Lorem ipsum dolor sit amet,  ipsum dolor sit amet...",
-    image: "/hero.webp",
-    prepTime: "30 MIN",
-    serves: "4 SERVES"
+    image: "/hero.webp"
   },
   {
     id: 3,
-    title: "Pasta",
+    title: "Lorem",
     description:
       "Lorem ipsum dolor sit amet,  ipsum dolor sit amet,  ipsum dolor sit amet, Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet...",
-    image: "/hero.webp",
-    prepTime: "40 MIN",
-    serves: "3 SERVES",
-    badge: "New Recipe"
+    image: "/hero.webp"
   },
   {
     id: 4,
-    title: "Sweet Potatoes",
+    title: "Lorem",
     description:
       "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-    image: "/hero.webp",
-    prepTime: "30 MIN",
-    serves: "4 SERVES"
+    image: "/hero.webp"
   }
 ];

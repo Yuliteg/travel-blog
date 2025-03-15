@@ -25,7 +25,6 @@ export const Icon: FC<Props> = ({
       width={width}
       height={height}
       priority={priority}
-      style={{ width: "auto", height: "auto" }}
     />
   );
 };

@@ -6,13 +6,13 @@ import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SwiperSlide } from "swiper/react";
 
-import { featuredRecipes } from "@/lib/constants";
+import { featuredPlaces } from "@/lib/constants";
 import { Card } from "@/ui/Card";
 import { SectionTitle } from "@/ui/SectionTitle";
 
 import { CardSlider } from "./CardSlider";
 
-export const FeaturedRecipesSection: React.FC = () => {
+export const FeaturedCardSection: React.FC = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
@@ -28,7 +28,7 @@ export const FeaturedRecipesSection: React.FC = () => {
   return (
     <div className="my-20 w-full flex-col gap-5 rounded-xl border border-stroke px-4 pb-4">
       <div className="flex justify-between py-6">
-        <SectionTitle title="Featured Recipes" fontSize="3xl" />
+        <SectionTitle title="Featured Places" fontSize="3xl" />
 
         <div className="flex gap-3">
           <button
@@ -60,15 +60,12 @@ export const FeaturedRecipesSection: React.FC = () => {
         nextRef={nextRef}
         onSlideChange={handleSlideChange}
       >
-        {featuredRecipes.map((recipe) => (
-          <SwiperSlide key={recipe.id}>
+        {featuredPlaces.map((place) => (
+          <SwiperSlide key={place.id}>
             <Card
-              title={recipe.title}
-              description={recipe.description}
-              image={recipe.image}
-              prepTime={recipe.prepTime}
-              serves={recipe.serves}
-              badge={recipe.badge}
+              title={place.title}
+              description={place.description}
+              image={place.image}
             />
           </SwiperSlide>
         ))}
