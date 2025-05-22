@@ -2,17 +2,17 @@ import React from "react";
 
 import Link from "next/link";
 
-import { navItems } from "@/lib/constants";
+import { BASE_PATH, navItems } from "@/lib/constants";
 import { Icon } from "@/ui/Icon";
 
 import NavLink from "./NavLink";
 
 export const Header = () => {
   return (
-    <header className="absolute left-0 top-0 z-50 flex h-header w-full items-center border-b border-white/10 bg-[rgba(50,50,80,0.1)] font-bold text-white shadow-lg backdrop-blur-md">
+    <header className="flex h-header w-full items-center border-b border-white/10 bg-deep-blue-gradient text-white shadow-lg backdrop-blur-md">
       <div className="mx-auto flex w-11/12 items-center justify-between py-4">
         {/* Logo */}
-        <Link href={"/"} passHref aria-label="Go to homepage">
+        <Link href={BASE_PATH} passHref aria-label="Go to homepage">
           <div className="group flex cursor-pointer items-center">
             <Icon
               src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.svg`}
@@ -28,7 +28,7 @@ export const Header = () => {
         </Link>
 
         {/* Navigation */}
-        <nav>
+        <nav aria-label="Main navigation">
           <ul className="flex space-x-8 text-white">
             {navItems.map((item) => (
               <NavLink key={item.path} href={item.path} label={item.label} />

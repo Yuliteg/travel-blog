@@ -42,6 +42,10 @@ const config: Config = {
         skeletonGray: "#e8e4db",
 
         stroke: "rgba(38, 37, 34, 0.24)"
+      },
+      backgroundImage: {
+        "deep-blue-gradient":
+          "linear-gradient(to right, rgba(15,32,39,0.7) 0%, rgba(26,47,55,0.7) 50%, rgba(35,63,78,0.7) 100%)"
       }
     }
   },
