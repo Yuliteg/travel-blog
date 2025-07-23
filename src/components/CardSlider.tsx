@@ -18,7 +18,7 @@ interface CardSliderProps {
   children: ReactNode;
 }
 
-export const CardSlider: React.FC<CardSliderProps> = ({
+const CardSlider: React.FC<CardSliderProps> = ({
   prevRef,
   nextRef,
   onSlideChange,
@@ -30,40 +30,43 @@ export const CardSlider: React.FC<CardSliderProps> = ({
     setIsMounted(true);
   }, []);
 
+  if (!isMounted) {
+    return (
+      <div className="mx-auto grid w-full max-w-screen-lg grid-cols-3 gap-8">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <SkeletonCard key={i} />
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto w-full max-w-screen-lg">
-      {!isMounted ? (
-        <div className="grid grid-cols-3 gap-8">
-          <SkeletonCard />
-          <SkeletonCard />
-          <SkeletonCard />
-        </div>
-      ) : (
-        <Swiper
-          spaceBetween={35}
-          slidesPerView={3}
-          modules={[Navigation]}
-          navigation={{
-            prevEl: prevRef?.current,
-            nextEl: nextRef?.current
-          }}
-          onBeforeInit={(swiper) => {
-            const navigation = swiper.params.navigation as NavigationOptions;
+      <Swiper
+        spaceBetween={35}
+        slidesPerView={3}
+        modules={[Navigation]}
+        navigation={{
+          prevEl: prevRef?.current,
+          nextEl: nextRef?.current
+        }}
+        onBeforeInit={(swiper) => {
+          const navigation = swiper.params.navigation as NavigationOptions;
 
-            if (prevRef?.current && nextRef?.current && navigation) {
-              navigation.prevEl = prevRef.current;
-              navigation.nextEl = nextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }
-          }}
-          onSlideChange={(swiper) => {
-            onSlideChange(swiper.isBeginning, swiper.isEnd);
-          }}
-        >
-          {children}
-        </Swiper>
-      )}
+          if (prevRef?.current && nextRef?.current && navigation) {
+            navigation.prevEl = prevRef.current;
+            navigation.nextEl = nextRef.current;
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }
+        }}
+        onSlideChange={(swiper) => {
+          onSlideChange(swiper.isBeginning, swiper.isEnd);
+        }}
+      >
+        {children}
+      </Swiper>
     </div>
   );
 };
+export default CardSlider;
