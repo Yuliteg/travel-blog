@@ -4,13 +4,25 @@ import { useRef, useState } from "react";
 
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import dynamic from "next/dynamic";
 import { SwiperSlide } from "swiper/react";
 
 import { featuredPlaces } from "@/lib/constants";
 import { Card } from "@/ui/Card";
 import { SectionTitle } from "@/ui/SectionTitle";
 
-import { CardSlider } from "./CardSlider";
+import { SkeletonCard } from "./SkeletonCard";
+
+const CardSlider = dynamic(() => import("./CardSlider"), {
+  ssr: false,
+  loading: () => (
+    <div className="mx-auto grid w-full max-w-screen-lg grid-cols-3 gap-8">
+      {Array.from({ length: 3 }).map((_, i) => (
+        <SkeletonCard key={i} />
+      ))}
+    </div>
+  )
+});
 
 export const FeaturedCardSection: React.FC = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -39,6 +51,7 @@ export const FeaturedCardSection: React.FC = () => {
                 : "border-[#d1c7a8] bg-[#efda99] text-gray-800"
             }`}
             disabled={sliderState.isBeginning}
+            aria-label="Previous Slide"
           >
             <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4" />
           </button>
@@ -50,6 +63,7 @@ export const FeaturedCardSection: React.FC = () => {
                 : "border-[#d1c7a8] bg-[#efda99] text-gray-800"
             }`}
             disabled={sliderState.isEnd}
+            aria-label="Next Slide"
           >
             <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
           </button>
