@@ -12,20 +12,22 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   href?: string;
+  ariaLabel?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   variant = "filled",
-  bgColor = "bg-orange-400",
+  bgColor = "bg-primary-3",
   textColor = "text-black",
   size = "md",
   children,
   onClick,
   className,
-  href
+  href,
+  ariaLabel
 }) => {
   const baseStyles =
-    "text-md rounded-full font-semibold transition-colors duration-200 ease-in-out uppercase font-montserrat";
+    "text-md rounded-sm font-semibold transition-colors duration-200 ease-in-out uppercase font-montserrat";
 
   const isOutlinedTransparent =
     variant === "outlined" && bgColor === "transparent";
@@ -33,7 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
   const variants = {
     filled: `${bgColor} ${textColor} hover:bg-opacity-80`,
     outlined: isOutlinedTransparent
-      ? `border-2 border-gray-900 ${textColor} bg-transparent hover:border-orange-400 hover:text-orange-500`
+      ? `border-2 border-gray-900 ${textColor} bg-transparent hover:border-orange-400 hover:text-orange-500 focus:outline-none focus:bg-orange-400/10`
       : `border-2 ${bgColor} ${textColor} hover:bg-opacity-80 border-gray-900`
   };
 
@@ -59,7 +61,12 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button onClick={onClick} className={buttonClasses} type="button">
+    <button
+      onClick={onClick}
+      className={buttonClasses}
+      type="button"
+      {...(ariaLabel && { "aria-label": ariaLabel })}
+    >
       {children}
     </button>
   );

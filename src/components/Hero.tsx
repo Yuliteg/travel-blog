@@ -4,7 +4,7 @@ import { Button } from "@/ui/Button";
 
 export const Hero = () => {
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-hero w-full overflow-hidden">
       <Image
         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/hero.webp`}
         alt="Culinary Image"
@@ -13,11 +13,11 @@ export const Hero = () => {
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
         quality={80}
         priority
+        className="brightness-[0.5]"
       />
-      <div className="absolute inset-0 z-10 bg-black opacity-50"></div>
 
       {/* Hero Content */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 pt-[var(--header-height)] text-center">
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/10 px-4 text-center">
         <h1 className="font-montserrat mb-4 text-5xl font-bold uppercase text-white md:text-7xl">
           Helping Others <br /> Live & Travel
         </h1>
@@ -28,7 +28,7 @@ export const Hero = () => {
         </p>
         <Button
           variant="filled"
-          bgColor="bg-orange-400"
+          bgColor="bg-primary-3"
           size="sm"
           href={"/all-places/"}
         >

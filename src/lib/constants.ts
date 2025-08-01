@@ -4,6 +4,9 @@ export const navItems = [
   { path: "/all-places/", label: "All Places" },
   { path: "/about/", label: "About Us" }
 ];
+const homeNavItems = [{ path: "/", label: "Home" }];
+
+export const mobileNavItems = [...homeNavItems, ...navItems];
 
 // Mock data
 export const featuredPlaces = [

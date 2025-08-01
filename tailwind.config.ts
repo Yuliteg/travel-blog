@@ -27,7 +27,7 @@ const config: Config = {
       },
       height: {
         header: "var(--header-height)",
-        hero: "calc(100vh - var(--header-height) - 1rem)"
+        hero: "calc(100vh - var(--header-height))"
       },
       letterSpacing: {
         tighter: "0.03em"
@@ -35,8 +35,8 @@ const config: Config = {
       colors: {
         "text-main": "#262522",
         "text-secondary": "#A0A0A0",
-        "primary-2": "#F29C33",
-        "primary-3": "#EE6352",
+        "primary-2": "#1e1e1e",
+        "primary-3": "#8DD3BB",
         customBorder: "#e0dbc9",
         customBg: "#f0ebe1",
         skeletonGray: "#e8e4db",
@@ -46,6 +46,9 @@ const config: Config = {
       backgroundImage: {
         "deep-blue-gradient":
           "linear-gradient(to right, rgba(15,32,39,0.7) 0%, rgba(26,47,55,0.7) 50%, rgba(35,63,78,0.7) 100%)"
+      },
+      boxShadow: {
+        "inset-light-gray": "inset 0 -1px 0 0 rgba(255, 255, 255, 0.2)"
       }
     }
   },
